@@ -1,39 +1,20 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SkyWay - Room example</title>
-
-    <script src="//cdn.webrtc.ecl.ntt.com/skyway-4.4.5.js" defer></script>
-    <script src="./shared/key.js"></script>
-    <script src="./script.js" defer></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>SkyWay Tutorial</title>
   </head>
   <body>
-    <div class="container">
-      <h1 class="heading">Room example</h1>
-      <p class="note">
-        Change Room mode (before join in a room):
-        <a href="#">mesh</a> / <a href="#sfu">sfu</a>
-      </p>
-      <div class="room">
-        <div>
-          <video id="js-local-stream"></video>
-          <span id="js-room-mode"></span>:
-          <input type="text" placeholder="Room Name" id="js-room-id" />
-          <button id="js-join-trigger">Join</button>
-          <button id="js-leave-trigger">Leave</button>
-        </div>
-
-        <div class="remote-streams" id="js-remote-streams"></div>
-
-        <div>
-          <pre class="messages" id="js-messages"></pre>
-          <input type="text" id="js-local-text" />
-          <button id="js-send-trigger">Send</button>
-        </div>
-      </div>
-      <p class="meta" id="js-meta"></p>
+    <p>ID: <span id="my-id"></span></p>
+    <div>
+      room name: <input id="room-name" type="text" />
+      <button id="join">join</button>
     </div>
+    <video id="local-video" width="400px" muted playsinline></video>
+    <div id="button-area"></div>
+    <div id="remote-media-area"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@skyway-sdk/room/dist/skyway_room-latest.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
